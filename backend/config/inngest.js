@@ -31,7 +31,7 @@ const syncUser = inngest.createFunction(
       { event: "clerk/user.deleted" },
         async ({ event }) => {
             // This function will run whenever a user is deleted in Clerk
-      
+      await connectDB();
             // Access the user data from the event
             // The structure of event.data will depend on Clerk's webhook payload
             // Here, we're assuming it contains id field
