@@ -21,18 +21,18 @@ app.get('/',(req,res)=>{
 //     connectDB();
 // });
 
-const startServer = async () => {//vercel doesnt use app.listen so we need to connectDB before starting the server//first problem arrived here 
-    try {
-      await connectDB();
-      if(ENV.NODE_ENV !== "production"){
-      app.listen(ENV.PORT, () => {
-        console.log(`Server is running on port ${ENV.PORT}`);
-      });
-    }
-    } catch (error) {
-      console.error('Failed to start server:', error);
-        process.exit(1);
-    }
-  };
-   startServer();
+// const startServer = async () => {//vercel doesnt use app.listen so we need to connectDB before starting the server//first problem arrived here 
+//     try {
+//       await connectDB();
+//       if(ENV.NODE_ENV !== "production"){
+//       app.listen(ENV.PORT, () => {
+//         console.log(`Server is running on port ${ENV.PORT}`);
+//       });
+//     }
+//     } catch (error) {
+//       console.error('Failed to start server:', error);
+//         process.exit(1);
+//     }
+//   };
+//    startServer();
 export default app;
