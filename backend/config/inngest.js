@@ -4,7 +4,9 @@ import { connectDB } from "./db.js";
 import { User } from "../src/models/User.models.js";
 
 // Create a client to send and receive events
-export const inngest = new Inngest({ id: "vibeconnect_app_user" });
+export const inngest = new Inngest({ id: "vibeconnect_app_user",
+   signingKey: process.env.INNGEST_SIGNING_KEY,
+ });
 
 const syncUser = inngest.createFunction(
   { name: "Sync User" },
